@@ -656,3 +656,99 @@ a {
     border-bottom: none;
   }
 }
+/* =========================================
+   LIGHT MODE STYLING & OVERRIDES
+========================================= */
+html.light {
+  --background: #f8fafc;
+  --background-soft: #ffffff;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --green: #10b981;
+  --cyan: #0284c7;
+  --accent: #10b981;
+}
+
+html.light body {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(2, 132, 199, 0.08),
+      transparent 450px
+    ),
+    #f8fafc;
+  color: #0f172a;
+}
+
+html.light .navbar {
+  background: rgba(248, 250, 252, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html.light .nav-links a {
+  color: #64748b;
+}
+
+html.light .nav-links a:hover {
+  color: #0f172a;
+}
+
+html.light .theme-button {
+  background: rgba(0, 0, 0, 0.04);
+  color: #0f172a;
+}
+
+/* Light mode for all sections */
+html.light section,
+html.light #skills,
+html.light #projects,
+html.light #resume,
+html.light #contact {
+  background-color: #f8fafc !important;
+}
+
+/* Light mode cards */
+html.light .about-card,
+html.light #skills .grid > div,
+html.light #projects .grid > div,
+html.light #resume .shadow-lg,
+html.light #contact .rounded-xl,
+html.light #contact .rounded-2xl {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Light mode text */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light .text-white,
+html.light strong {
+  color: #0f172a !important;
+}
+
+html.light p,
+html.light .text-gray-400,
+html.light .text-gray-500,
+html.light #skills li,
+html.light .hero-description {
+  color: #64748b !important;
+}
+
+/* Light mode inputs */
+html.light input,
+html.light textarea {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .about-stats {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}

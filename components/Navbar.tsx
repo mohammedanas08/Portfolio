@@ -1,10 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+// Load saved theme on initial load
+useEffect(() => {
+  const savedTheme = (localStorage.getItem("theme") as "dark" | "light") || "dark";
+  setTheme(savedTheme);
+  if (savedTheme === "light") {
+    document.documentElement.classList.add("light");
+  } else {
+    document.documentElement.classList.remove("light");
+  }
+}, []);
+
+// Toggle between dark and light
+const toggleTheme = () => {
+  const nextTheme = theme === "dark" ? "light" : "dark";
+  setTheme(nextTheme);
+  localStorage.setItem("theme", nextTheme);
+
+  if (nextTheme === "light") {
+    document.documentElement.classList.add("light");
+  } else {
+    document.documentElement.classList.remove("light");
+  }
+};
+
 
   const navItems = [
     { label: "About", href: "#about" },
@@ -42,10 +69,17 @@ export default function Navbar() {
         {/* Right: Actions (Theme Button + Mobile 3-Dots Button) */}
         <div className="flex items-center gap-3">
           {/* Theme Button */}
-          <button className="theme-button" aria-label="Toggle theme">
-            <span className="theme-dot"></span>
-            Dark
-          </button>
+<button 
+  onClick={toggleTheme} 
+  className="theme-button cursor-pointer flex items-center gap-2 px-3 py-1.5 rounded-full border border-[rgba(150,170,190,0.25)] bg-[rgba(255,255,255,0.03)] hover:border-[#35d07f] transition-all"
+  aria-label="Toggle theme"
+>
+  <span className="theme-dot w-2.5 h-2.5 rounded-full bg-[#35d07f] shadow-[0_0_10px_#35d07f]"></span>
+  <span className="text-xs font-medium capitalize">
+    {theme === "dark" ? "Dark" : "Light"}
+  </span>
+</button>
+
 
           {/* Mobile 3-Dots Button (Visible ONLY on Mobile/Tablet) */}
           <button
