@@ -1,7 +1,6 @@
 // components/Skills.tsx
 import React from 'react';
 
-// Define your skills data here
 const skillsData = [
   {
     category: "Programming Languages",
@@ -31,29 +30,51 @@ const skillsData = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-[#080c13]">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-[#f3f6f8] mb-12">
-          Technical Skills
-        </h2>
+    <section id="skills" className="section section-shell py-24">
+      <div className="container">
+        {/* Section Heading matching About & Hero style */}
+        <div className="section-heading mb-14 text-center md:text-left">
+          <p className="eyebrow">02 — SKILLS & TECHNOLOGIES</p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Technical expertise &amp;
+            <span className="bg-gradient-to-r from-[#35b8d8] to-[#35d07f] bg-clip-text text-transparent">
+              {" "}tools I work with.
+            </span>
+          </h2>
+        </div>
 
+        {/* Skills Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillsData.map((category, index) => (
             <div
               key={index}
-              className="bg-[#111923] border border-[rgba(150,170,190,0.18)] hover:border-[#35d07f]/50 shadow-lg"
+              className="bg-[#111923]/70 backdrop-blur-sm border border-[rgba(150,170,190,0.18)] hover:border-[rgba(53,208,127,0.45)] hover:-translate-y-1 rounded-[18px] p-7 transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.25)] flex flex-col justify-between"
             >
-              <h3 className="text-xl font-semibold text-[#35d07f] mb-4 border-b pb-2">
-                {category.category}
-              </h3>
-              <ul className="space-y-2">
-                {category.items.map((skill, idx) => (
-                  <li key={idx} className="flex items-center text-[#f3f6f8]">
-                    <span className="w-2 h-2 bg-[#35d07f] rounded-full mr-3"></span>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
+              <div>
+                {/* Category Header */}
+                <h3 className="text-lg font-semibold text-[#35d07f] mb-5 pb-3 border-b border-[rgba(150,170,190,0.15)] flex items-center justify-between">
+                  <span>{category.category}</span>
+                  <span className="text-xs font-mono text-[#8f9aa8] opacity-60">
+                    0{index + 1}
+                  </span>
+                </h3>
+
+                {/* Skill List */}
+                <ul className="space-y-3">
+                  {category.items.map((skill, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center text-[#f3f6f8] text-sm group"
+                    >
+                      {/* Glowing dot */}
+                      <span className="w-2 h-2 rounded-full bg-[#35d07f] shadow-[0_0_8px_#35d07f] mr-3 shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="text-[#c8d2dc] group-hover:text-white transition-colors">
+                        {skill}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

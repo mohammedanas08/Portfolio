@@ -17,7 +17,7 @@ export default function Navbar() {
 
         <button className="theme-button">
           <span className="theme-dot"></span>
-          Light
+          Dark
         </button>
 
       </div>
