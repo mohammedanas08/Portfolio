@@ -31,25 +31,25 @@ const skillsData = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-[#080c13]">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl font-bold text-center text-[#f3f6f8] mb-12">
           Technical Skills
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillsData.map((category, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-100"
+            <div
+              key={index}
+              className="bg-[#111923] border border-[rgba(150,170,190,0.18)] hover:border-[#35d07f]/50 shadow-lg"
             >
-              <h3 className="text-xl font-semibold text-blue-600 mb-4 border-b pb-2">
+              <h3 className="text-xl font-semibold text-[#35d07f] mb-4 border-b pb-2">
                 {category.category}
               </h3>
               <ul className="space-y-2">
                 {category.items.map((skill, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  <li key={idx} className="flex items-center text-[#f3f6f8]">
+                    <span className="w-2 h-2 bg-[#35d07f] rounded-full mr-3"></span>
                     {skill}
                   </li>
                 ))}
