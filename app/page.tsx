@@ -5,6 +5,7 @@ import SkillsSection from '@/components/Skills';
 import ProjectsSection from '@/components/Projects';
 import ResumeSection from '@/components/Resume';
 import ContactSection from '@/components/Contact';
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
       
       {/* ✅ Added Contact Section Here */}
       <ContactSection />
+
+      {/* ✅ Added Footer Section Here */}
+      <Footer />
 
     </main>
   );
