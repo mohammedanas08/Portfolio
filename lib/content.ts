@@ -89,7 +89,7 @@ export type Project = {
   demo?: string | null;
   /** Full-width card at the top of the grid. */
   featured?: boolean;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; /** "contain" shows the whole image; default "cover" fills the panel. */ fit?: "cover" | "contain" };
 };
 
 export const projects: Project[] = [
@@ -118,6 +118,11 @@ export const projects: Project[] = [
     //   (replace `null`; while it is null the card shows a disabled "Live demo (coming soon)" button)
     demo: null,
     featured: true,
+    image: {
+      src: "/zestora.webp",
+      alt: "Illustration of the Zestora app showing its three partner restaurants and four user roles",
+      fit: "contain",
+    },
   },
   {
     title: "FlexiFit — AI Personalized Fitness Coach",

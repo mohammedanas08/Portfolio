@@ -14,13 +14,13 @@ function ProjectCard({ project }: { project: Project }) {
       data-reveal
     >
       {image && (
-        <div className="relative h-56 shrink-0 overflow-hidden border-b border-line bg-surface-2 md:h-auto md:w-72 md:border-b-0 md:border-r">
+        <div className={`relative h-64 shrink-0 overflow-hidden border-b border-line ${image.fit === "contain" ? "bg-bg" : "bg-surface-2"} md:h-auto md:w-72 md:border-b-0 md:border-r`}>
           <Image
             src={image.src}
             alt={image.alt}
             fill
             sizes="(min-width: 768px) 288px, 100vw"
-            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            className={`${image.fit === "contain" ? "object-contain" : "object-cover"} object-center transition-transform duration-500 group-hover:scale-[1.03]`}
           />
         </div>
       )}
