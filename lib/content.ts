@@ -114,9 +114,8 @@ export const projects: Project[] = [
       "Razorpay",
     ],
     github: "https://github.com/mohammedanas08/ZESTORA---Food-Mart",
-    // ➜ ADD YOUR LIVE LINK HERE when it is ready, e.g. demo: "https://zestora.example.com",
-    //   (replace `null`; while it is null the card shows a disabled "Live demo (coming soon)" button)
-    demo: null,
+    // Live link. Set to `null` to show a disabled "Live demo (coming soon)" button instead.
+    demo: "https://frontend-five-eta-j493wcam1t.vercel.app/",
     featured: true,
     image: {
       src: "/zestora.webp",
