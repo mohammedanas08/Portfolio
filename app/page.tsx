@@ -1,34 +1,37 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import SkillsSection from '@/components/Skills';
-import ProjectsSection from '@/components/Projects';
-import ResumeSection from '@/components/Resume';
-import ContactSection from '@/components/Contact';
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Education from "@/components/Education";
+import Certificates from "@/components/Certificates";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import RevealObserver from "@/components/RevealObserver";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-ink"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <Hero />
-      <About />
-
-      {/* ✅ Added Skills Section Here */}
-      <SkillsSection />
-
-      {/* ✅ Added Projects Section Here */}
-      <ProjectsSection />
-
-      {/* ✅ Added Resume Section Here */}
-      <ResumeSection />
-      
-      {/* ✅ Added Contact Section Here */}
-      <ContactSection />
-
-      {/* ✅ Added Footer Section Here */}
+      <main id="main">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Certificates />
+        <Contact />
+      </main>
       <Footer />
-
-    </main>
+      <RevealObserver />
+    </>
   );
 }
